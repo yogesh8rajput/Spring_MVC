@@ -7,11 +7,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MyController {
      @RequestMapping("/one")
-     @ResponseBody
+//     @ResponseBody
 	String get()
 	
 	{
-		return "hello_my";
+		return "first";
+		
+	}
+     
+     @RequestMapping("/one2")
+//   @ResponseBody
+	String set()
+	
+	{
+		return "second";
 		
 	}
 	
