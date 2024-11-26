@@ -1,0 +1,14 @@
+package com.mycompany;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class MyController {
+     
+	String get()
+	{
+		return hello_my;
+		
+	}
+	
+}
