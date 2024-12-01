@@ -2,8 +2,12 @@ package com.mycompany;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.dao.Student;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,21 +31,44 @@ public class MyController {
 		return "second";
 		
 	}
-	
-     @RequestMapping("/insert_data")
+	//Madel Attributes
+//     @RequestMapping("/insert_data")
 //   @ResponseBody
-	String insert(HttpServletRequest req,Model m)
-	
-	{
-    	 String roll=req.getParameter("roll");
-    	 String name=req.getParameter("name");
-    	 String per=req.getParameter("per");
-//    	 System.out.println(roll+name+per);
-    	 m.addAttribute("roll",roll);
-    	 m.addAttribute("name",name);
-    	 m.addAttribute("per",per);
-    	 
-		return "insert_data";
-		
-	}
+//	String insert(HttpServletRequest req,Model m)
+//	
+//	{
+//    	 String roll=req.getParameter("roll");
+//    	 String name=req.getParameter("name");
+//    	 String per=req.getParameter("per");
+////    	 System.out.println(roll+name+per);
+//    	 m.addAttribute("roll",roll);
+//    	 m.addAttribute("name",name);
+//    	 m.addAttribute("per",per);
+//    	 
+//		return "insert_data";
+//		
+//	}
+     
+     //Model and view 
+//   public  ModelAndView insert(HttpServletRequest req,ModelAndView ma)
+// 	
+// 	{
+//     	 String roll=req.getParameter("roll");
+//     	 String name=req.getParameter("name");
+//     	 String per=req.getParameter("per");
+////     	 System.out.println(roll+name+per);
+//     	 ma.addObject("roll",roll);
+//     	 ma.addObject("name",name);
+//     	 ma.addObject("per",per);
+//     	 ma.setViewName("insert_data");
+// 		return ma;
+//		
+// 	}
+     //ModelAttributes
+     @RequestMapping("/insert_data")
+     public String insert(@ModelAttribute Student student, Model model) {
+          model.addAttribute("student", student);
+     }     
+
+
 }

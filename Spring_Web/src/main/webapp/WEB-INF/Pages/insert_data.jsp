@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ page import="com.dao.Student" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +9,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <%
-   String roll=(String)request.getAttribute("roll");
-   String name=(String)request.getAttribute("name");
-   String per=(String)request.getAttribute("per");
-   
-   %>
-   Roll No:<%=roll %>
-   Name:<%=name %>
-   Percent:<%=per %>
+
+  
+  <% 
+  Student stu = (Student) request.getAttribute("student");
+  stu.getRollno();
+  stu.getName();
+  stu.getPercent();
+%>
+ 
 </body>
 </html>
+
+
+ 
+  
