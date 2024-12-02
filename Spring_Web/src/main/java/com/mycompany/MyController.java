@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dao.Student;
+import com.dao.StudentDao;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -66,8 +67,9 @@ public class MyController {
 // 	}
      //ModelAttributes
      @RequestMapping("/insert_data")
-     public String insert(@ModelAttribute Student student, Model model) {
-          model.addAttribute("student", student);
+     public String insert(@ModelAttribute Student student) {
+    	  
+    	 return "insert_data";
      }     
 
 

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 @Transactional
 public class StudentDao {
-   @Autowired
+    @Autowired
 	HibernateTemplate ht;
 
 public HibernateTemplate getHt() {
@@ -21,8 +21,8 @@ public void setHt(HibernateTemplate ht) {
 
 public int insert(Student st)
 {
-	int i=(Integer)ht.save(st);
-	return i;
+	ht.save(st);
+	return 1;
 }
 
 public void delete (Student st)

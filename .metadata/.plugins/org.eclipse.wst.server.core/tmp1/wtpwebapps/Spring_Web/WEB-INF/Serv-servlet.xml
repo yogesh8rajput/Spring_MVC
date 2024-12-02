@@ -46,7 +46,9 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>com.Student</value>
+				<value>com.dao.Student</value>
+				<value>com.dao.StudentDao</value>
+				<value>com.mycompany.MyController</value>
 			</list>
 		</property>
 	</bean>
@@ -54,7 +56,7 @@
 		name="hibtemp">
 		<property name="sessionFactory" ref="factory" />
 	</bean>
-	<bean class="com" name="studentDao">
+	<bean class="com.dao.StudentDao" name="studentDao">
 		<property name="ht" ref="hibtemp" />
 	</bean>
 	<bean

@@ -1,3 +1,7 @@
+            
+<%@page import="org.springframework.web.context.WebApplicationContext"%>
+<%@page import="io.micrometer.observation.Observation.Context"%>
+<%@page import="com.dao.StudentDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
@@ -12,10 +16,16 @@
 
   
   <% 
-  Student stu = (Student) request.getAttribute("student");
-  stu.getRollno();
+ 
+  StudentDao sd=(StudentDao)config.getBean("studentDao");
+ // StudentDao sd=new StudentDao();
+Student stu = (Student) request.getAttribute("student");
+ stu.getRollno();
   stu.getName();
   stu.getPercent();
+  
+ 
+  // int i=sd.insert(stu);
 %>
  
 </body>
