@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Spring_Web\SpringMvc3"/>
+			<item value="D:\Spring_Web\Spring_Web"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,12 +27,18 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="Spring_Web_Assigenment1.Spring_Web_Assigenment1"/>
+			<item value="Spring_Web_Assigenment.Spring_Web_Assigenment"/>
 			<item value="com.mycompany"/>
 		</list>
 		<list key="groupId">
+			<item value="Spring_Web_Assigenment1"/>
+			<item value="Spring_Web_Assigenment"/>
 			<item value="Spring_Web"/>
 		</list>
 		<list key="artifactId">
+			<item value="Spring_Web_Assigenment1"/>
+			<item value="Spring_Web_Assigenment"/>
 			<item value="Spring_Web"/>
 		</list>
 		<list key="projectNameTemplate">

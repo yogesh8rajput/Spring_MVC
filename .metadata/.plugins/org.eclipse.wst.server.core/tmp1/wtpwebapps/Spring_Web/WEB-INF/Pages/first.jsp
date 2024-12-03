@@ -7,7 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Welcome!!!!!!!!!!
+<form action="insert" method="post" >
+<pre>
+<input type="text" placeholder="rollno" name="rollno"><br>
+<input type="text" placeholder="" name="name"><br>
+<input type="text" placeholder="Percent" name="percent"><br>
+<input type="submit" placeholder="value">
+</pre>
+</form>
 </h1>
 </body>
 </html>

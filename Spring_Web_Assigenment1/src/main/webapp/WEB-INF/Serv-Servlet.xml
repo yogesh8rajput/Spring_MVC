@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Enable annotation-based transaction management -->
+    <tx:annotation-driven />
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/Pages/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <!-- Component scanning for Spring beans -->
+    <context:component-scan base-package="com" />
+
+    <!-- DataSource bean -->
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="mySource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3307/Universal" />
+        <property name="username" value="root" />
+        <property name="password" value="1234" />
+    </bean>
+
+    <!-- SessionFactory bean for Hibernate -->
+    <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="factory">
+        <property name="dataSource" ref="mySource" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.mycompany.Docter</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- HibernateTemplate bean -->
+    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="hibtemp">
+        <property name="sessionFactory" ref="factory" />
+    </bean>
+
+    <!-- DAO bean for StudentDao -->
+    <bean id="docterDao" class="com.dao.DocterDao">
+
+        <property name="ht" ref="hibtemp" />
+    </bean>
+
+    <!-- Transaction manager for Hibernate -->
+    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">
+        <property name="sessionFactory" ref="factory" />
+    </bean>
+
+    <!-- Internal Resource View Resolver -->
+    
+
+</beans>
