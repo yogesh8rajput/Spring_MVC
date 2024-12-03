@@ -47,12 +47,13 @@ public String insert(@ModelAttribute Docter ddd) {
         
      }  
      @RequestMapping("/delete")
+//     @ResponseBody
      public String delete(@RequestParam("id") Integer id) {
         Docter doctor = dd.findById(id);  // Find the doctor by ID
         if (doctor != null) {
            dd.delete(doctor);  // Delete the doctor if found
         }
-        return "a";  // Redirect to the "view" page to show the updated list
+        return "result";  // Redirect to the "view" page to show the updated list
      }
 
     

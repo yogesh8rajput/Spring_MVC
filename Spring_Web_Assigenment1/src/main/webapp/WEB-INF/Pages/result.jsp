@@ -8,5 +8,6 @@
 </head>
 <body>
 yessss
+<a href="index.jsp">insert</a>
 </body>
 </html>
