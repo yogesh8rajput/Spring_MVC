@@ -1,5 +1,7 @@
 package com.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +26,26 @@ public class DocterDao {
 	{
 		return (Integer)ht.save(docter);
 	}
-		
+	
+	public void  update(Docter docter)
+	{
+		ht.update(docter);
+	
+	}
+	
+	public void  delete(Docter docter)
+	{
+		ht.delete(docter);
+	
+	}
+	public Docter findById(Integer id) {
+	    return ht.get(Docter.class, id);  // This fetches the doctor by ID
+	}
+
+	public List<Docter> select()
+	{
+		List <Docter> i=ht.loadAll(Docter.class);
+	return i;
+	}
+	
 }
