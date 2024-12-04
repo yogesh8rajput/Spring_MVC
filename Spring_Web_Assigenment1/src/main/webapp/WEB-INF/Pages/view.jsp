@@ -18,6 +18,7 @@
 		for (Docter docter : li){
       %>
         id:<%= docter.getD_id() %><a href="delete?id=<%= docter.getD_id() %>">delete</a>
+<a href="update?id=<%= docter.getD_id() %>">==Update</a>
 
       Name:<%= docter.getD_name() %>
       Salary:<%= docter.getD_as()  %>

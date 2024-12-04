@@ -39,7 +39,7 @@ public class DocterDao {
 	
 	}
 	public Docter findById(Integer id) {
-	    return ht.get(Docter.class, id);  // This fetches the doctor by ID
+	    return ht.get(Docter.class, id);  
 	}
 
 	public List<Docter> select()

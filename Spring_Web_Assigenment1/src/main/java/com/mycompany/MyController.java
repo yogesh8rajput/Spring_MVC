@@ -51,12 +51,20 @@ public String insert(@ModelAttribute Docter ddd) {
      public String delete(@RequestParam("id") Integer id) {
         Docter doctor = dd.findById(id);  // Find the doctor by ID
         if (doctor != null) {
-           dd.delete(doctor);  // Delete the doctor if found
+           dd.delete(doctor);  
         }
-        return "result";  // Redirect to the "view" page to show the updated list
-     }
+        return "result";  
+        }
 
-    
+     @RequestMapping("/update")
+//   @ResponseBody
+   public String update(@RequestParam("id") Integer id) {
+      Docter doctor = dd.findById(id);  // Find the doctor by ID
+      if (doctor != null) {
+         dd.update(doctor);  // Delete the doctor if found
+      }
+      return "result";  // Redirect to the "view" page to show the updated list
+   } 
 }
 
 
