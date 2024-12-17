@@ -57,14 +57,18 @@ public String insert(@ModelAttribute Docter ddd) {
         }
 
      @RequestMapping("/update")
-//   @ResponseBody
-   public String update(@RequestParam("id") Integer id) {
-      Docter doctor = dd.findById(id);  // Find the doctor by ID
-      if (doctor != null) {
-         dd.update(doctor);  // Delete the doctor if found
-      }
-      return "result";  // Redirect to the "view" page to show the updated list
-   } 
+  	public String update(@RequestParam("id") Integer id,Model mo) {
+  		Docter st =dd.findById(id);
+  		mo.addAttribute("data", st);
+  		
+  		return "updateInfo";
+  	}
+  	@RequestMapping("/updateinfo")
+  	public String updated(@ModelAttribute Docter student) {
+  		dd.update(student);
+  		return "redirect:/all";
+  		
+  	}
 }
 
 

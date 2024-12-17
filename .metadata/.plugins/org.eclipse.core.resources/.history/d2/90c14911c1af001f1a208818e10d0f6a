@@ -1,7 +1,0 @@
-package com.dao;
-
-import org.springframework.orm.hibernate5.HibernateTemplate;
-@Autowired
-public class StudentDao {
-   HibernateTemplate ht;
-}
