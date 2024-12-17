@@ -13,22 +13,28 @@
 
 body{
 height:100%;
-
+background:white;
 display: flex;
 justify-content: center;
 align-items: center;
 }
 table{
-width:50%;
+width:80%;
 height:10rem;
 }
 
+table, th, td {
+   border: 1px solid black;
+}
+th, td {
+  background-color: #96D4D4;
+}
 </style>
 
 </head>
 <body>
 
-<table>
+<table >
 <thead>
 
 <th>ID</th>
